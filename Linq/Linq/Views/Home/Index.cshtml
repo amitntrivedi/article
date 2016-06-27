@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>Client Name</th>
-                                      
+                    <th>No of Order Placed</th>                 
                 </tr>
             </thead>
             <tbody>
@@ -17,8 +17,8 @@
                 @foreach (var user in ViewBag.ClientOrder)
                 {
                     <tr>
-                        <td><strong>@user</strong></td>
-
+                        <td><strong>@user.ClientName</strong></td>
+                        <td><strong>@user.TotalNoOfOrder</strong></td>
                      
                     </tr>
                 }

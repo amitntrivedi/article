@@ -26,6 +26,7 @@ namespace Linq.Controllers
             public int TotalNoOfOrder { get; set; }
             
         }
+      
         public ActionResult Index()
         {
 
@@ -48,10 +49,11 @@ namespace Linq.Controllers
                               where client.id > 3
                               select client;
 
+
             var masterDetailQuery = from myclient in clientList
                                     join myorder in orderList
                                     on myclient.id equals myorder.Cid into ords
-                                    select new 
+                                    select new ClientOrder
                                     {
                                         ClientName = myclient.name,
                                         TotalNoOfOrder= ords.Count()
