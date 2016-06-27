@@ -1,0 +1,30 @@
+﻿@{
+      ViewBag.Title = "Home Page";
+}
+
+<section class="container col-lg-12">
+
+    <div class="table-responsive">
+        <table class="table table-striped custom-grid">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                                      
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var user in ViewBag.ClientOrder)
+                {
+                    <tr>
+                        <td><strong>@user</strong></td>
+
+                     
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</section>
