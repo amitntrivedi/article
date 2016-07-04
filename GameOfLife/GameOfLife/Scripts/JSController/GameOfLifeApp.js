@@ -109,13 +109,21 @@ angular.module('myApp', ['ngSanitize'])
                         this.IsAlive=isAlive; 
                     }
             }
-            var CurrentBoard  = {
-                RowCount:10, 
-                ColumnCount:10, 
-                Rows:[] 
+            var currentBoard  = {
+                rowCount:10, 
+                columnCount:10, 
+                board: boards[0]
 
             };
-            CurrentBoard.Rows.push(boards[0]);
+
+            //for (var i = 0; i < boards[0].length; i++) {
+            //    for (var j=0; j<boardSize; j++)
+            //    {
+            //        currentBoard.rows.push(boards[0][i][j]);
+            //    }
+                
+            //}
+
 
             var req = {
                 method: 'POST',
@@ -123,7 +131,7 @@ angular.module('myApp', ['ngSanitize'])
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: CurrentBoard
+                data: currentBoard
             }
 
             $http(req).then(function (response) {

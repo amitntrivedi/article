@@ -30,7 +30,7 @@ namespace GameOfLife.Tests.Controllers
             // Assert
  
             Models.Board expectedGrid = new Models.Board();
-            Assert.AreEqual(10, response.RowCount);  
+            Assert.AreEqual(10, response.rowCount);  
         }
     }
 }

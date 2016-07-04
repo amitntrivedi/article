@@ -12,16 +12,16 @@ namespace GameOfLife.Models
 
     public class Board
     {
-        public int RowCount { get; set;  }
-        public int ColumnCount { get; set;  }
-        public List<Row> _Rows; 
-        public List<Row> Rows
+        public int rowCount { get; set;  }
+        public int columnCount { get; set;  }
+        public List<Row> _rows; 
+        public List<Row> rows
         { set
             {
-                _Rows=value ;
+                _rows=value ;
             }
             get {
-                return _Rows; 
+                return _rows; 
             }
         }
         public Board(int rows, int columns)
@@ -39,14 +39,14 @@ namespace GameOfLife.Models
         /// <returns>returns row</returns>
         public Row this[int x]
         {
-            get { if (Rows.Count <= x) throw new ArgumentOutOfRangeException("Argument out of bound"); return Rows[x]; }
-            set { if (Rows.Count <= x) throw new ArgumentOutOfRangeException("Argument out of bound"); Rows[x] = value; }
+            get { if (rows.Count <= x) throw new ArgumentOutOfRangeException("Argument out of bound"); return rows[x]; }
+            set { if (rows.Count <= x) throw new ArgumentOutOfRangeException("Argument out of bound"); rows[x] = value; }
         }
 
         private void Setup(int rows, int columns)
         {
             if (rows <= 0 || columns <= 0) throw new ArgumentOutOfRangeException("Row and Column size must be greater than zero");
-            Rows = new List<Row>();
+            this.rows = new List<Row>();
             for (int i = 0; i < rows; i++)
             {
                 Row row = new Row();
@@ -55,10 +55,10 @@ namespace GameOfLife.Models
                     Cell cell = new Cell(false);
                     row.AddCell(cell);
                 }
-                Rows.Add(row);
+                this.rows.Add(row);
             }
-            ColumnCount = columns;
-            RowCount = rows; 
+            columnCount = columns;
+            rowCount = rows; 
         }
     }
 

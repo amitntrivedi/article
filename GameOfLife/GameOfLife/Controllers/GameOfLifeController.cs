@@ -10,20 +10,20 @@ namespace GameOfLife.Controllers
     public class GameOfLifeController : ApiController
     {
         [HttpPost]
-        public Board CreateNewBoard(Board CurrentBoard)
+        public Board CreateNewBoard(Board currentBoard)
         {
-            int rows=CurrentBoard.RowCount;
+            int rows=currentBoard.rowCount;
 
-            int columns=CurrentBoard.ColumnCount; 
+            int columns=currentBoard.columnCount; 
             Board NewBoard = new Board ( rows,  columns);
-            NewBoard.RowCount = 10; 
+            NewBoard.rowCount = 10; 
 
 
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    NewBoard[i][j].IsAlive = getNewLifeValue(CurrentBoard, i, j, rows, columns);
+                    NewBoard[i][j].IsAlive = getNewLifeValue(currentBoard, i, j, rows, columns);
                    
                 }
             }
