@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
+    <script src="Scripts/JSController/GameOfLifeApp.js"></script>
+    <link rel="stylesheet" href="Content/GameOfLife.css">
+
+</head>
+<body ng-app="myApp">
+    <h1>Game Of Life</h1>
+    <hr />
+    <div ng-controller="AppCtrl">
+        <strong>LIFE</strong>
+        <div id="messageArea">{{message}}</div>
+        <button ng-click="on()" ng-hide="showButton()">
+            <strong>START</strong>
+
+        </button>
+        <button ng-click="off()" ng-show="showButton()">
+            <strong>STOP</strong>
+
+        </button>
+        <div id="lifeBoard" ng-show="showButton()" ng-bind-html="boardHTML"></div>
+        <div id="counter" ng-show="showButton()">Generations: {{ generations }}</div>
+        <div id="boardNumber" ng-show="showButton()"><!-- Board #: {{ currentBoard }} --></div>
+    </div>
+</body>
+</html>
