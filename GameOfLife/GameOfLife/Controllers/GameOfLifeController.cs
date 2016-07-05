@@ -16,17 +16,17 @@ namespace GameOfLife.Controllers
 
             int columns=currentBoard.columnCount; 
             Board NewBoard = new Board ( rows,  columns);
-            NewBoard.rowCount = 10; 
+            //NewBoard.rowCount = 10; 
 
 
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    NewBoard[i][j].IsAlive = getNewLifeValue(currentBoard, i, j, rows, columns);
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < columns; j++)
+            //    {
+            //        NewBoard[i][j].IsAlive = getNewLifeValue(currentBoard, i, j, rows, columns);
                    
-                }
-            }
+            //    }
+            //}
             return NewBoard; 
 
         }

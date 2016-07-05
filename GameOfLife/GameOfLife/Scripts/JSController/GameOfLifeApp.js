@@ -64,7 +64,7 @@ angular.module('myApp', ['ngSanitize'])
                 clearInterval($scope.intervalInstance);
                 show = false;
                 alert("HEY! NEXT BOARD IS THE SAME!\nClick STOP.\n");
-                $scope.apply();
+                $scope.$apply();
             }
         }
 
@@ -109,21 +109,13 @@ angular.module('myApp', ['ngSanitize'])
                         this.IsAlive=isAlive; 
                     }
             }
-            var currentBoard  = {
-                rowCount:10, 
-                columnCount:10, 
-                board: boards[0]
+            var CurrentBoard  = {
+                RowCount:10, 
+                ColumnCount:10, 
+                Rows:[] 
 
             };
-
-            //for (var i = 0; i < boards[0].length; i++) {
-            //    for (var j=0; j<boardSize; j++)
-            //    {
-            //        currentBoard.rows.push(boards[0][i][j]);
-            //    }
-                
-            //}
-
+            CurrentBoard.Rows.push(boards[0]);
 
             var req = {
                 method: 'POST',
@@ -131,13 +123,11 @@ angular.module('myApp', ['ngSanitize'])
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: currentBoard
+                data: CurrentBoard
             }
 
             $http(req).then(function (response) {
-                alert(response.data);
-                alert(response.status); 
-
+               //response.data
             }, function () {
 
 
