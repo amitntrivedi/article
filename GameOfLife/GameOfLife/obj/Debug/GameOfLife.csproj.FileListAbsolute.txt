@@ -91,14 +91,9 @@ D:\git\article\GameOfLife\GameOfLife\bin\GameOfLife.pdb
 D:\git\article\GameOfLife\GameOfLife\bin\Antlr3.Runtime.dll
 D:\git\article\GameOfLife\GameOfLife\bin\EntityFramework.dll
 D:\git\article\GameOfLife\GameOfLife\bin\EntityFramework.SqlServer.dll
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.AspNet.Identity.Core.dll
 D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.dll
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.Security.dll
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.Security.OAuth.dll
 D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Web.Infrastructure.dll
 D:\git\article\GameOfLife\GameOfLife\bin\Newtonsoft.Json.dll
-D:\git\article\GameOfLife\GameOfLife\bin\Owin.dll
 D:\git\article\GameOfLife\GameOfLife\bin\System.Net.Http.Formatting.dll
 D:\git\article\GameOfLife\GameOfLife\bin\System.Web.Helpers.dll
 D:\git\article\GameOfLife\GameOfLife\bin\System.Web.Http.dll
@@ -125,10 +120,6 @@ D:\git\article\GameOfLife\GameOfLife\bin\System.Web.Http.xml
 D:\git\article\GameOfLife\GameOfLife\bin\System.Web.Http.WebHost.xml
 D:\git\article\GameOfLife\GameOfLife\bin\EntityFramework.xml
 D:\git\article\GameOfLife\GameOfLife\bin\EntityFramework.SqlServer.xml
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.AspNet.Identity.Core.xml
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.xml
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.Security.xml
-D:\git\article\GameOfLife\GameOfLife\bin\Microsoft.Owin.Security.OAuth.xml
 D:\git\article\GameOfLife\GameOfLife\obj\Debug\GameOfLife.dll
 D:\git\article\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
 D:\git\article\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csprojResolveAssemblyReference.cache
