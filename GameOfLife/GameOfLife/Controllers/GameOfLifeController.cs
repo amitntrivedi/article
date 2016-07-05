@@ -12,21 +12,22 @@ namespace GameOfLife.Controllers
         [HttpPost]
         public Board CreateNewBoard(Board currentBoard)
         {
-            int rows=currentBoard.rowCount;
 
-            int columns=currentBoard.columnCount; 
-            Board NewBoard = new Board ( rows,  columns);
-            //NewBoard.rowCount = 10; 
+            int rows = currentBoard.RowCount;
 
+            int columns = currentBoard.ColumnCount;
+            Board NewBoard = new Board(rows, columns);
+            NewBoard.RowCount = 10;
+            NewBoard.ColumnCount = 10;
 
-            //for (int i = 0; i < rows; i++)
-            //{
-            //    for (int j = 0; j < columns; j++)
-            //    {
-            //        NewBoard[i][j].IsAlive = getNewLifeValue(currentBoard, i, j, rows, columns);
-                   
-            //    }
-            //}
+            //  for (int i = 0; i < rows; i++)
+            //  {
+            //      for (int j = 0; j < columns; j++)
+            //      {
+            ////          NewBoard[i][j].IsAlive = GetNewLifeValue(currentBoard, i, j, rows, columns);
+
+            //      }
+            //  }
             return NewBoard; 
 
         }
@@ -46,48 +47,48 @@ namespace GameOfLife.Controllers
 
        
 
-        private Boolean getNewLifeValue(Board CurrentBoard, int row, int column, int rows, int columns)
-        {
+        //private Boolean GetNewLifeValue(Board CurrentBoard, int row, int column, int rows, int columns)
+        //{
 
-            // save current life value
-            Boolean startLifeValue = CurrentBoard[row][column].IsAlive;
-            Boolean newLifeValue = false;
+        //    // save current life value
+        //    Boolean startLifeValue = CurrentBoard[row][column].IsAlive;
+        //    Boolean newLifeValue ;
 
-            // check all surrounding squares
-            int  startrow = (row > 0) ? (row - 1) : row;
-            int endrow = (row < (rows - 1)) ? (row + 1) : row;
-            int startcol = (column > 0) ? (column - 1) : column;
-            int endcol = (column < (column - 1)) ? (column + 1) : column;
-            int liveNeighbors = 0;
+        //    // check all surrounding squares
+        //    int  startrow = (row > 0) ? (row - 1) : row;
+        //    int endrow = (row < (rows - 1)) ? (row + 1) : row;
+        //    int startcol = (column > 0) ? (column - 1) : column;
+        //    int endcol = (column < (columns - 1)) ? (column + 1) : column;
+        //    int liveNeighbors = 0;
 
-            for (int i = startrow; i <= endrow; i++)
-            {
-                for (int j = startcol; j <= endcol; j++)
-                {
-                    // skip the current space itself
-                    if ((i == row) && (j == column))
-                    {
-                        // skip
-                    }
-                    else {
-                        liveNeighbors += CurrentBoard[i][j].IsAlive ? 1:0;
-                    }
-                }
-            }
+        //    for (int i = startrow; i <= endrow; i++)
+        //    {
+        //        for (int j = startcol; j <= endcol; j++)
+        //        {
+        //            // skip the current space itself
+        //            if ((i == row) && (j == column))
+        //            {
+        //                // skip
+        //            }
+        //            else {
+        //                liveNeighbors += CurrentBoard[i][j].IsAlive ? 1:0;
+        //            }
+        //        }
+        //    }
 
-            if (startLifeValue == false)
-            {
-                // if currently DEAD, only ONE check
-                newLifeValue = false;
-                if (liveNeighbors == 3) newLifeValue = true;
-            }
-            else {
-                // WAS alive; only lives on if 2 or 3 live neighbors
-                newLifeValue = false;
-                if ((liveNeighbors == 2) || (liveNeighbors == 3)) newLifeValue = true;
-            }
+        //    if (startLifeValue == false)
+        //    {
+        //        // if currently DEAD, only ONE check
+        //        newLifeValue = false;
+        //        if (liveNeighbors == 3) newLifeValue = true;
+        //    }
+        //    else {
+        //        // WAS alive; only lives on if 2 or 3 live neighbors
+        //        newLifeValue = false;
+        //        if ((liveNeighbors == 2) || (liveNeighbors == 3)) newLifeValue = true;
+        //    }
 
-            return newLifeValue;
-        }
+        //    return newLifeValue;
+        //}
     }
 }

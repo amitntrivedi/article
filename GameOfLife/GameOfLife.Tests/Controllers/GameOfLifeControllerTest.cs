@@ -15,7 +15,7 @@ namespace GameOfLife.Tests.Controllers
     public class GameOfLifeControllerTest
     {
         [TestMethod]
-        public void generateNewBoardShouldReturnGrid()
+        public void GenerateNewBoardShouldReturnGrid()
         {
             // Arrange
             GameOfLifeController controller = new GameOfLifeController();
@@ -28,9 +28,7 @@ namespace GameOfLife.Tests.Controllers
             var response = controller.CreateNewBoard(prevBoard);
 
             // Assert
- 
-            Models.Board expectedGrid = new Models.Board();
-            Assert.AreEqual(10, response.rowCount);  
+             Assert.AreEqual(10, response.RowCount);  
         }
     }
 }

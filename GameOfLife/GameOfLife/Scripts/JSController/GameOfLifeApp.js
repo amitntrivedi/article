@@ -29,7 +29,8 @@ angular.module('myApp', ['ngSanitize'])
             $scope.message = "";
             $scope.generations = 1;
             $scope.counting = true;
-            $scope.intervalInstance = setInterval($scope.updateDisplayUsingAPI, 1000);
+             $scope.intervalInstance = setInterval($scope.updateDisplayUsingAPI, 1000);
+           // $scope.updateDisplayUsingAPI; 
             // fill intial board with random values
             boards[currentBoard] = randomFillBoard(currentBoard, boardSize, boardSize);
             $scope.boardHTML = getBoardHTML(currentBoard, boardSize, boardSize);
@@ -112,10 +113,20 @@ angular.module('myApp', ['ngSanitize'])
             var CurrentBoard  = {
                 RowCount:10, 
                 ColumnCount:10, 
-                Rows:[] 
+                Rows: []
 
             };
-            CurrentBoard.Rows.push(boards[0]);
+            for (var i = 0; i < boards[0].length; i++) {
+                CurrentBoard.Rows.push(boards[0][i]);
+                console.log('------')
+                console.log(boards[0][i]);
+
+                console.log(CurrentBoard.Rows[i]);
+              //  console.log(CurrentBoard.Rows[0].length);
+                console.log(i);
+
+            }
+
 
             var req = {
                 method: 'POST',
@@ -123,7 +134,7 @@ angular.module('myApp', ['ngSanitize'])
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: CurrentBoard
+                data:JSON.stringify( CurrentBoard)
             }
 
             $http(req).then(function (response) {
